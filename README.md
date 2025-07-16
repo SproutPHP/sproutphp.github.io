@@ -2,7 +2,7 @@
   <img src="img/SproutPHP_Logo.png" alt="SproutPHP Logo" width="120" />
 </div>
 
-<h1 align="center">SproutPHP Documentation</h1>
+<h1 align="center">SproutPHP Website</h1>
 
 <p align="center">
   <a href="https://github.com/sproutphp/framework"><img src="https://img.shields.io/badge/source-sproutphp%2Fsproutphp-green" alt="source"></a>
@@ -14,7 +14,7 @@
 
 ---
 
-This is the **README** for the SproutPHP framework documentation.
+This is the **README** for the SproutPHP framework website.
 
 - 🌱 **SproutPHP Website:** [https://sproutphp.github.io](https://sproutphp.github.io)
 - 📦 **Repository:** [https://github.com/sproutphp/framework](https://github.com/sproutphp/framework)
