@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - SproutPHP</title>
+    <link rel="icon" type="image/png" href="img/sproutphp_logo.png" />
+    <!-- PicoCSS CDN (minimal variant) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@latest/css/pico.min.css"
+    />
+    <style>
+      :root {
+        --bg: var(--pico-background-color, #181c22);
+        --fg: var(--pico-color, #fff);
+        --muted: #b3b9c5;
+        --primary: #4ade80;
+        --accent: #db2777;
+        --card: #23272f;
+        --border: #2d323b;
+        --shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+      }
+      [data-theme="light"] {
+        --bg: var(--pico-background-color, #f8fafc);
+        --fg: var(--pico-color, #181c22);
+        --muted: #475569;
+        --primary: #16a34a;
+        --accent: #db2777;
+        --card: #fff;
+        --border: #e5e7eb;
+        --shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+      }
+      html,
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        min-height: 100vh;
+        transition: background 0.2s, color 0.2s;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.2rem 1.5rem 0.5rem 1.5rem;
+        background: transparent;
+        box-shadow: none;
+      }
+      .logo-row {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .logo-img {
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 8px;
+        background: #fff;
+        border: 2px solid var(--primary);
+        box-shadow: var(--shadow);
+      }
+      .brand {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--primary);
+        letter-spacing: 0.01em;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+        background: transparent;
+        box-shadow: none;
+      }
+      nav a,
+      nav button {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.05rem;
+        background: none;
+        border: none;
+        box-shadow: none;
+        transition: color 0.15s;
+      }
+      nav a:hover,
+      nav button:hover {
+        color: var(--accent);
+        background: none;
+      }
+      .sponsor-btn {
+        background: var(--card);
+        color: var(--accent);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.2em 0.8em;
+        font-size: 1rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+        box-shadow: var(--shadow);
+        transition: background 0.15s, color 0.15s;
+      }
+      .sponsor-btn:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+      .stars-btn {
+        background: var(--card);
+        color: var(--fg);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.2em 0.7em;
+        font-size: 1rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+        box-shadow: var(--shadow);
+        transition: background 0.15s, color 0.15s;
+      }
+      .stars-btn:hover {
+        background: var(--primary);
+        color: #fff;
+      }
+      .toggle-btn {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--fg);
+        margin-left: 1.2rem;
+        transition: color 0.2s;
+      }
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2.5rem 1rem 1.5rem 1rem;
+        text-align: center;
+      }
+      .about-branding {
+        max-width: 700px;
+        margin: 3em auto 2em auto;
+        padding: 0 1.5em;
+        text-align: center;
+      }
+      .about-branding-logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        margin-bottom: 1em;
+        background: #fff;
+        border: 2px solid var(--primary);
+      }
+      .about-branding-desc {
+        color: var(--fg);
+        font-size: 1.13em;
+        margin-bottom: 1.2em;
+      }
+      .about-branding-quote {
+        font-style: italic;
+        color: var(--muted);
+        margin: 1.2em 0 0 0;
+        font-size: 1.08em;
+      }
+      .about-branding-sponsor {
+        margin-top: 1.5em;
+      }
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.7em;
+          padding: 1.1rem 0.7rem 0.5rem 0.7rem;
+        }
+        .about-branding {
+          padding: 1.2em 0.5em 1em 0.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-row">
+        <img
+          src="img/sproutphp_logo.png"
+          alt="SproutPHP Logo"
+          class="logo-img"
+        />
+        <span class="brand">SproutPHP</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="https://sproutphp.github.io/documentation/">Docs</a>
+        <a
+          href="https://github.com/sponsors/yanikkumar"
+          class="sponsor-btn"
+          target="_blank"
+          rel="noopener"
+          >&#10084; Sponsor Creator</a
+        >
+        <a
+          href="https://github.com/SproutPHP/framework"
+          class="stars-btn"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg
+            height="18"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            style="vertical-align: middle"
+          >
+            <path
+              d="M8 12.027l-3.717 2.21.711-4.15-3.02-2.944 4.166-.605L8 2.5l1.86 3.99 4.166.605-3.02 2.944.711 4.15z"
+            ></path>
+          </svg>
+          Stars
+          <span
+            id="star-count"
+            style="
+              background: var(--card);
+              color: var(--muted);
+              border-radius: 4px;
+              padding: 0 0.4em;
+              font-size: 0.95em;
+              margin-left: 0.2em;
+            "
+            >...</span
+          >
+        </a>
+        <button
+          class="toggle-btn"
+          id="theme-toggle"
+          title="Toggle dark/light mode"
+        >
+          🌙
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section id="about-branding" class="about-branding">
+        <img
+          src="img/SproutPHP_Icon.png"
+          alt="SproutPHP Icon"
+          class="about-branding-logo"
+        />
+        <h2>About SproutPHP Branding &amp; Creator</h2>
+        <p class="about-branding-desc">
+          SproutPHP is a modern, minimalist PHP framework designed and created
+          by
+          <a href="https://github.com/yanikkumar" target="_blank">Yanik Kumar</a
+          >. The SproutPHP logo and icon represent growth, simplicity, and the
+          power of starting small to build something great.
+        </p>
+        <blockquote class="about-branding-quote">
+          “From tiny seeds grow mighty trees. — SproutPHP”
+        </blockquote>
+      </section>
+    </main>
+    <footer
+      style="
+        margin-top: auto;
+        padding: 1.5em 0 1em 0;
+        text-align: center;
+        font-size: 1.02em;
+        color: var(--muted);
+        background: none;
+      "
+    >
+      <div style="margin-top: 0.7em; font-size: 0.98em; color: var(--muted)">
+        &copy; 2025 SproutPHP. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      // Dark/Light mode toggle
+      const themeBtn = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+      function setInitialTheme() {
+        let theme = localStorage.getItem("theme");
+        if (!theme) {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        html.setAttribute("data-theme", theme);
+        themeBtn.textContent = theme === "dark" ? "🌙" : "☀️";
+      }
+      setInitialTheme();
+      themeBtn.addEventListener("click", function () {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        themeBtn.textContent = newTheme === "dark" ? "🌙" : "☀️";
+      });
+
+      // Fetch GitHub star count dynamically
+      fetch("https://api.github.com/repos/SproutPHP/framework")
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.stargazers_count !== undefined) {
+            document.getElementById("star-count").textContent =
+              data.stargazers_count;
+          }
+        })
+        .catch(() => {
+          document.getElementById("star-count").textContent = "—";
+        });
+    </script>
+  </body>
+</html>
