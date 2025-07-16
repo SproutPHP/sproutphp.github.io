@@ -311,9 +311,7 @@
         class="main-logo"
       />
       <div class="main-title">SproutPHP</div>
-      <div class="main-version">
-        <span id="version-number">...</span>
-      </div>
+      <div class="main-version">v0.1.7-beta.1 (pre-release)</div>
       <div class="main-desc">
         Welcome to <b>SproutPHP</b>, the seed-to-plant minimal PHP framework
         🌱<br />
@@ -385,34 +383,6 @@
         })
         .catch(() => {
           document.getElementById("star-count").textContent = "—";
-        });
-
-      // Fetch GitHub latest release version dynamically
-      // ---
-      // WARNING: Do NOT expose your GitHub token in public deployments!
-      // This is for private/local use only.
-      // ---
-      const GITHUB_TOKEN =
-        "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";
-      const versionUrl =
-        "https://api.github.com/repos/SproutPHP/framework/releases";
-      const versionHeaders = GITHUB_TOKEN
-        ? { Authorization: "Bearer " + GITHUB_TOKEN }
-        : {};
-      fetch(versionUrl, { headers: versionHeaders })
-        .then((response) => response.json())
-        .then((data) => {
-          if (Array.isArray(data) && data.length > 0) {
-            const tag = data[0].tag_name || "unknown";
-            const isPrerelease = data[0].prerelease ? " (pre-release)" : "";
-            document.getElementById("version-number").textContent =
-              tag + isPrerelease;
-          } else {
-            document.getElementById("version-number").textContent = "unknown";
-          }
-        })
-        .catch(() => {
-          document.getElementById("version-number").textContent = "unknown";
         });
     </script>
   </body>
