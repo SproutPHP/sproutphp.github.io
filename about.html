@@ -218,6 +218,19 @@
         font-size: 0.98em;
         color: var(--muted);
       }
+      .beta-ribbon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #ff9800;
+        color: white;
+        padding: 5px 10px;
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: none;
+        border-bottom-left-radius: 5px;
+        z-index: 999;
+      }
       @media (max-width: 600px) {
         header {
           flex-direction: column;
@@ -273,6 +286,7 @@
     </style>
   </head>
   <body>
+    <a href="#" class="beta-ribbon"> Beta </a>
     <header>
       <div class="logo-row">
         <img
