@@ -277,6 +277,29 @@
         font-size: 0.98em;
         color: var(--muted);
       }
+      .fork-github-btn {
+        position: absolute;
+        bottom: 6.5em;
+        right: 2em;
+        display: inline-block;
+        background: var(--card, #23272f);
+        color: var(--fg, #fff);
+        padding: 0.6em 1.2em;
+        border-radius: 8px 8px 0 0;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 2px 8px #0002;
+        font-size: 1.1em;
+        border: 2px solid var(--accent, #db2777);
+        border-bottom: none;
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
+        z-index: 10;
+      }
+      .fork-github-btn:hover {
+        background: var(--accent, #db2777);
+        color: #fff;
+        border-color: var(--primary, #4ade80);
+      }
       @media (max-width: 600px) {
         header {
           flex-direction: column;
@@ -340,11 +363,13 @@
           padding: 0.6em 0.9em;
           border-radius: 8px;
         }
+        .fork-github-btn {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
-    <a href="#" class="beta-ribbon"> Beta </a>
     <header>
       <div class="logo-row">
         <img
@@ -448,8 +473,16 @@
         text-align: center;
         font-size: 0.95rem;
         color: #888;
+        background: var(--card, #23272f);
       "
     >
+      <a
+        href="https://github.com/SproutPHP/framework"
+        target="_blank"
+        class="fork-github-btn"
+      >
+        🍴 Fork me on GitHub
+      </a>
       <div class="footer-follow">
         <span>Follow us:</span>
         <a
