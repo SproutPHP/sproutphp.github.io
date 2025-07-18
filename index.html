@@ -458,7 +458,7 @@
           >❤️ Sponsor</a
         >
       </div>
-      <div class="alert warning">
+      <div class="alert warning" id="beta-warning">
         🚧 SproutPHP is currently in beta (<code class="sproutphp-version"
           >...</code
         >). Expect changes and improvements.
@@ -578,6 +578,13 @@
             versionSpans.forEach(function (span) {
               span.textContent = version;
             });
+            // Show/hide beta warning
+            var betaWarning = document.getElementById("beta-warning");
+            if (version.includes("beta") || version.includes("pre-release")) {
+              betaWarning.style.display = "block";
+            } else {
+              betaWarning.style.display = "none";
+            }
           }
         })
         .catch(() => {
